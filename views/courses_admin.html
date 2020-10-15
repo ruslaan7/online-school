@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Список курсов</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body style="font-family: 'PT Sans', sans-serif !important; background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 100%), url(../images/header-image.jpg) fixed">
+    <div class="container-fluid" style="background: rgba(51,51,102, 0.75)">
+        <h1 class="text-center text-white">Онлайн-школа "Hello, dog"</h1>
+        <h2 class="text-center text-white">Сдать ЕГЭ/ОГЭ просто "Hello, dog"!</h2>
+        <div class="container-fluid">
+            <ul class="list-inline d-flex justify-content-between">
+                <li class="list-inline-item"><img src="../images/barash.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                <li class="list-inline-item"><img src="../images/karich.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                <li class="list-inline-item"><button class="btn btn-link text-white align-self-center">Посмотреть все курсы</button></li>
+                <li class="list-inline-item"><img src="../images/krosch.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                <li class="list-inline-item"><img src="../images/sovunya.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+        <ul class="nav justify-content-around">
+            <li>
+                <div class="nav-item"><button class="btn btn-link text-black-50"><a class="btn-link" href="/">Выйти</a></button></div>
+            </li>
+            <li>
+                <div class="nav-item"><button class="btn btn-link text-black-50" type="button"><a class="btn-link" href="/courses">Курсы</a></button></div>
+            </li>
+            <li>
+                <div class="nav-item"><button class="btn btn-link text-black-50" type="button"><a class="btn-link" href="/teachers">Преподаватели</a></button></div>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-right">
+                    <button class="btn btn-primary my-1" type="button" data-toggle="modal" data-target="#courseadd"><i class="material-icons">description</i></button>
+                    <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#coursedelete "><i class="material-icons">delete</i></button>
+                    <button class="btn btn-success" type="button" data-toggle="modal" data-target="#courseedit"><i class="material-icons">mode_edit</i></button>
+                </div>
+                <table class="table table-hover" id="courses_table" data-toggle="table" data-pagination="true" data-locale="ru-RU"
+                       data-search="true">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Название</th>
+                        <th scope="col">Преподаватель</th>
+                        <th scope="col">Дата запуска курса</th>
+                        <th scope="col">Дата окончания курса</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each courses}}
+                    <tr class="table-light">
+                        <th scope="row">{{this.name}}</th>
+                        <td>{{this.teacher}}</td>
+                        <td>{{this.start}}</td>
+                        <td>{{this.stop}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="courseadd" tabindex="-1" role="dialog" aria-labelledby="courseaddModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Добавить курс</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form action="/courses/postCourse" method="post">
+                            <div class="form-group"><label for="cr_course_name">Название курса</label><input class="form-control" id="cr_course_name" type="text" placeholder="Название курса" name="cr_course_name" ></div>
+                            <div class="form-group"><label for="cr_course_description">Описание курса</label><textarea class="form-control" id="cr_course_description" type="text" placeholder="Описание курса" name="cr_course_description" rows="3"></textarea></div>
+                            <div class="form-group"><label for="cr_course_teacher">Преподаватель</label><select class="form-control" id="cr_course_teacher" type="text" placeholder="ФИО преподавателя" name="cr_course_teacher">{{#each courses}}<option>{{this.teacher}}</option>{{/each}}</select></div>
+                            <div class="form-group"><label for="cr_course_passNum">Количество учеников прошедших курс</label><input class="form-control" id="cr_course_passNum" type="number" placeholder="Количество учеников" name="cr_course_passNum"></div>
+                            <div class="form-group"><label for="cr_course_price">Стоимость</label><input class="form-control" id="cr_course_price" type="text" placeholder="Цена" name="cr_course_price"></div>
+                            <div class="form-group"><label for="cr_course_start_date">Дата начала курса</label><input class="form-control" id="cr_course_start_date" type="date" placeholder="Дата начала курса" name="cr_course_start_date"></div>
+                            <div class="form-group"><label for="cr_course_end_date">Дата окончания курса</label><input class="form-control" id="cr_course_end_date" type="date" placeholder="Дата окончания курса" name="cr_course_end_date"></div><button class="btn btn-primary btn-block btn-round" type="submit">Добавить курс</button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="courseedit" tabindex="-1" role="dialog" aria-labelledby="courseeditModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Редактировать</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form action="/courses/editCourse" method="post">
+                            <div class="form-group"><label for="edit_course_name">Название курса</label><select class="form-control" id="cr_course_teacher" type="text" placeholder="Название курса" name="edit_course_name">{{#each courses}}<option>{{this.name}}</option>{{/each}}</select></div>
+                            <div class="form-group"><label for="edit_course_description">Описание курса</label><textarea class="form-control" id="edit_course_description" type="text" placeholder="Описание курса" name="edit_course_description" rows="3" value="{{this.course_description}}"></textarea></div>
+                            <div
+                                    class="form-group"><label for="edit_course_teacher">Преподаватель</label><input class="form-control" id="edit_course_teacher" type="text" placeholder="ФИО преподавателя" name="edit_edit_course_teacher" value="{{this.course_teacher}}"></div>
+                            <div
+                                    class="form-group"><label for="edit_course_passNum">Количество учеников прошедших курс</label><input class="form-control" id="edit_course_passNum" type="number" placeholder="Количество учеников" name="edit_course_passNum" value="course.course_passNum"></div>
+                            <div
+                                    class="form-group"><label for="edit_course_price">Стоимость</label><input class="form-control" id="edit_course_price" type="text" placeholder="Цена" name="edit_course_price" value="{{this.course_price}}"></div>
+                            <div class="form-group"><label for="edit_course_start_date">Дата начала курса</label><input class="form-control" id="edit_course_start_date" type="date" placeholder="Дата начала курса" name="edit_course_start_date" value="{{this.course_start_date}}"></div>
+                            <div
+                                    class="form-group"><label for="edit_course_end_date">Дата окончания курса</label><input class="form-control" id="edit_course_end_date" type="date" placeholder="Дата окончания курса" name="edit_course_end_date" value="{{this.course_end_date}}"></div>
+                            <button
+                                    class="btn btn-primary btn-block btn-round" type="submit">Редактировать</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="coursedelete" tabindex="-1" role="dialog" aria-labelledby="coursedeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Удалить курс</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form action="/courses/deleteCourse" method="post">
+                            <div class="form-group"><label for="cr_course_teacher">Выберите курс</label><select class="form-control" id="cr_course_teacher" type="text" placeholder="Название курса" name="del_course_name">{{#each courses}}<option>{{this.name}}</option>{{/each}}</select></div>
+                            <button class="btn btn-primary btn-block btn-round" type="submit">Удалить курс</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <footer class="container">
+        <div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+            <ul class="nav justify-content-around">
+                <li>
+                    <div class="nav-item"><button class="btn btn-link text-black-50"><a class="btn-link" href="/">Выйти</a></button></div>
+                </li>
+                <li>
+                    <div class="nav-item"><button class="btn btn-link text-black-50" type="button"><a class="btn-link" href="/courses">Курсы</a></button></div>
+                </li>
+                <li>
+                    <div class="nav-item"><button class="btn btn-link text-black-50" type="button"><a class="btn-link" href="/teachers">Преподаватели</a></button></div>
+                </li>
+            </ul>
+        </div>
+    </footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-ru-RU.min.js"></script>
+</body>
+</html>

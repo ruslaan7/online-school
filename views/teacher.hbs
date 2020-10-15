@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello dog!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+</head>
+
+<body style="font-family: 'PT Sans', sans-serif !important; background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 100%), url(../images/header-image.jpg) fixed">
+<div class="container-fluid" style="background: rgba(51,51,102, 0.75)">
+    <h1 class="text-center text-white">Онлайн-школа "Hello, dog"</h1>
+    <h2 class="text-center text-white">Сдать ЕГЭ/ОГЭ просто "Hello, dog"!</h2>
+    <div class="container-fluid">
+        <ul class="list-inline d-flex justify-content-between">
+            <li class="list-inline-item"><img src="../images/barash.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><img src="../images/karich.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><button class="btn btn-link text-white align-self-center"><a class="text-white" href="/all_courses">Посмотреть все курсы</a></button></li>
+            <li class="list-inline-item"><img src="../images/krosch.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><img src="../images/sovunya.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+    <ul class="nav justify-content-between">
+        <li>
+            <div class="nav-item">
+                <button type="button" class="btn btn-link text-black-50" data-toggle="modal" data-target="#loginModal">Личный кабинет</button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_courses">Курсы</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_teachers">Преподаватели</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/faq">Вопрос-ответ</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/reviews">Отзывы</a></button>
+            </div>
+    </ul>
+</div>
+<br>
+<h2 class="text-center">Онлайн-школа "Hello, dog"</h2>
+<div class="container-lg">
+    <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2">
+            <img class="img-thumbnail rounded-circle" alt="фото учителя" src="../images/losyach.gif">
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 border border-dark">
+            {{#each teacher}}
+                <dl class="row">
+                    <dt class="col-sm-3">ФИО</dt>
+                    <dd class="col-sm-9">{{this.name}}</dd>
+                    <dt class="col-sm-3">Дата рождения</dt>
+                    <dd class="col-sm-9">{{this.birth}}</dd>
+                    <dt class="col-sm-3">Место работы</dt>
+                    <dd class="col-sm-9">{{this.workplace}}</dd>
+                    <dt class="col-sm-3">Достижения</dt>
+                    <dd class="col-sm-9">{{this.regards}}</dd>
+                    <dt class="col-sm-3">Стаж работы в онлайн-школе</dt>
+                    <dd class="col-sm-9">{{this.time}}</dd>
+                </dl>
+            {{/each}}
+        </div>
+    </div>
+        <h1 class="text-center">Список курсов, в которых участвует преподаватель</h1>
+        {{#each teacher}}
+            {{#each this.courses}}
+                <div class="container text-center">
+                    <h2 class="">{{this}}</h2>
+                    <button class="btn-info w-25 my-1 rounded"><a class="text-white" href="/course:id">Пройти курс</a></button>
+                </div>
+            {{/each}}
+        {{/each}}
+    </div>
+</div>
+<hr>
+<br>
+<footer class="container">
+    <div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+        <ul class="nav justify-content-between">
+            <li>
+                <div class="nav-item">
+                    <button type="button" class="btn btn-link text-black-50" data-toggle="modal" data-target="#loginModal">Личный кабинет</button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_courses">Курсы</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_teachers">Преподаватели</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/faq">Вопрос-ответ</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/reviews">Отзывы</a></button>
+                </div>
+        </ul>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-ru-RU.min.js"></script>
+</body>
+</html>

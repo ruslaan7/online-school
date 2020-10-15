@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello dog!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+</head>
+
+<body style="font-family: 'PT Sans', sans-serif !important; background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 100%), url(../images/header-image.jpg) fixed">
+<div class="container-fluid" style="background: rgba(51,51,102, 0.75)">
+    <h1 class="text-center text-white">Онлайн-школа "Hello, dog"</h1>
+    <h2 class="text-center text-white">Сдать ЕГЭ/ОГЭ просто "Hello, dog"!</h2>
+    <div class="container-fluid">
+        <ul class="list-inline d-flex justify-content-between">
+            <li class="list-inline-item"><img src="../images/barash.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><img src="../images/karich.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><button class="btn btn-link text-white align-self-center"><a class="text-black-50" href="/login/{{students}}">Личный кабинет</a></button></li>
+            <li class="list-inline-item"><img src="../images/krosch.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><img src="../images/sovunya.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+    <ul class="nav justify-content-between">
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/">Выйти</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_courses/{{students}}">Курсы</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_teachers/{{students}}">Преподаватели</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/faq/{{students}}">Вопрос-ответ</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/reviews/{{students}}">Отзывы</a></button>
+            </div>
+    </ul>
+</div>
+<h2 class="text-center">Вопрос-ответ</h2>
+<div class="container-lg">
+    <div class="row">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 border border-dark">
+                <br>
+                        <ul class="list text-center">
+                            <ul>Мы уже три года занимаемся, а ребенок так и не заговорил бегло. Чем ваша школа лучше?</ul>
+                            <br>
+                            <ul>&#8227;Возможно, вашему ребёнку просто не подходит нынешняя методика или не хватает мотивации. В основе наших детских курсов — коммуникативный метод. Это значит, что мы учим говорить на английском с самых первых уроков. Все задания построены таким образом, чтобы разговаривал большую часть урока сам ученик.</ul>
+                            <hr class="border-dark border">
+                            <ul>Мы можем заниматься с телефона?</ul>
+                            <br>
+                            <ul>&#8227; К сожалению, нет. Чтобы платформа работала полноценно и без сбоев, мы рекомендуем на уроке использовать компьютер или ноутбук и обязательно использовать гарнитуру. Еще одна рекомендация: браузер Google Chrome.</ul>
+                            <hr class="border-dark border">
+                            <ul>Не очень доверяю обучению онлайн, как это можно вообще контролировать?</ul>
+                            <br>
+                            <ul>&#8227; Все уроки на нашей платформе записываются. Записи сохраняются в личном кабинете ребёнка в папке “Портфолио”. Вы можете в любой момент самостоятельно прослушать любой урок. Кроме того в школе есть специальный отдел, задача которого прослушивать уроки и следить за качеством обучения.</ul>
+                            <hr class="border-dark border">
+                            <ul>Если моему ребенку не подойдет преподаватель, что делать?</ul>
+                            <br>
+                            <ul>&#8227; Когда мы подбираем ребенку учителя, мы следим, чтобы его квалификация и специализация помогли достигнуть конкретных целей конкретного ученика. А кроме того, мы обязательно учитываем интересы ребенка, его темперамент и пожелания. И чаще всего это успех. Но если нет - вы можете позвонить нам и мы подберем другого учителя. Это не проблема, в школе работает более 1000 учителей.</ul>
+                            <hr class="border-dark border">
+                        </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-title text-center">
+                    <h4>Вход</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                    <form action="/login" method="post">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="emaillog" placeholder="Ваш email" name="uname">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="passwordlog" placeholder="Ваш пароль" name="psw">
+                            <p class="font-small blue-text d-flex justify-content-end">Забыли <a href="#forgotpassModal" class="text-info ml-1" data-dismiss="modal" data-toggle="modal">
+                                пароль?</a></p>
+                        </div>
+                        <button type="submit" class="btn btn-info btn-block btn-round">Войти</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <div class="signup-section">Нет аккаунта? <a href="#registrationModal" class="text-info" data-dismiss="modal" data-toggle="modal"> Зарегистрируйтесь</a>.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="forgotpassModal" tabindex="-1" role="dialog" aria-labelledby="forgotpassModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-title text-center">
+                    <h4>Забыл пароль</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                    <form action="/password-loss" method="post">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="emailforgot" placeholder="Ваш email" name="uname">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password1" placeholder="Ваш новый пароль" name="psw">
+                        </div>
+                        <button type="submit" class="btn btn-info btn-block btn-round">Сменить пароль</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <div class="signup-section">Нет аккаунта? <a href="#registrationModal" class="text-info" data-dismiss="modal" data-toggle="modal"> Зарегистрируйтесь</a>.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-title text-center">
+                    <h4>Регистрация</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                    <form action="/registration" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="namereg" placeholder="Ваше имя" name="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="secondnamereg" placeholder="Ваша фамилия" name="secondname">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="telNoreg" placeholder="Ваш телефон" name="tel_number">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="emailreg"placeholder="Ваш email" name="login">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="passwordreg" placeholder="Ваш пароль" name="psw">
+                        </div>
+                        <button type="submit" class="btn btn-info btn-block btn-round">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<br>
+<footer class="container">
+<div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+    <ul class="nav justify-content-between">
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/">Выйти</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_courses/{{students}}">Курсы</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_teachers/{{students}}">Преподаватели</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/faq/{{students}}">Вопрос-ответ</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/reviews/{{students}}">Отзывы</a></button>
+            </div>
+    </ul>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

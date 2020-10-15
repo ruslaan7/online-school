@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello dog!</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+</head>
+
+<body style="font-family: 'PT Sans', sans-serif !important; background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 100%), url(../images/header-image.jpg) fixed">
+<div class="container-fluid" style="background: rgba(51,51,102, 0.75)">
+    <h1 class="text-center text-white">Онлайн-школа "Hello, dog"</h1>
+    <h2 class="text-center text-white">Сдать ЕГЭ/ОГЭ просто "Hello, dog"!</h2>
+    <div class="container-fluid">
+        <ul class="list-inline d-flex justify-content-between">
+            <li class="list-inline-item"><img src="../images/barash.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><img src="../images/karich.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><button class="btn btn-link text-white align-self-center"><a class="text-black-50" href="/login/{{students}}">Личный кабинет</a></button></li>
+            <li class="list-inline-item"><img src="../images/krosch.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            <li class="list-inline-item"><img src="../images/sovunya.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+    <ul class="nav justify-content-between">
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/">Выйти</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_courses/{{students}}">Курсы</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_teachers/{{students}}">Преподаватели</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/faq/{{students}}">Вопрос-ответ</a></button>
+            </div>
+        <li>
+            <div class="nav-item">
+                <button class="btn btn-link text-black-50"><a class="text-black-50" href="/reviews/{{students}}">Отзывы</a></button>
+            </div>
+    </ul>
+</div>
+<br>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12 border border-dark">
+            <table class="table table-hover overflow-hidden" id="courses_table" data-toggle="table" data-pagination="true" data-locale="ru-RU">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Отзывы</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each reviews}}
+                    <tr class="table-light">
+                        <th>
+                            <dl class="row">
+                                <dt class="col-sm-1"><img class="img-thumbnail rounded-circle" alt="фото пользователя" src="../images/ejik.gif"></dt>
+                                <dd class="col-sm-7"><p class="text-left">{{this.name}} о курсе {{this.courses}}</p><p class="border border-dark">{{this.review}}</p></dd>
+                                <dd class="col-sm-2">Рейтинг {{this.rating}}/5</dd>
+                                <dd class="col-sm-2">{{this.date}}</dd>
+                            </dl>
+                            <hr>
+                        </th>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+            <br>
+        </div>
+    </div>
+</div>
+<br>
+<div class="text-center"><button type="button" class="btn btn-primary px-5 py-2 rounded text-white" data-toggle="modal" data-target="#makereviewModal">Оставить отзыв</button></div>
+<div class="modal" id="makereviewModal" tabindex="-1" role="dialog" aria-labelledby="makereviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0"><button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+                <div class="form-title text-center">
+                    <h4>Написать отзыв</h4>
+                </div>
+                <div class="d-flex flex-column text-center">
+                    <form action="/reviews/add_review" method="post">
+                        <div class="form-group"><label for="review_person_name">Имя пользователя</label><input class="form-control" id="review_person_name" type="text" placeholder="Имя пользователя" name="review_person_name" readonly value="{{students}}"></div>
+                        <div class="form-group"><label for="review_course_name">Название курса</label><select class="form-control" id="review_course_name" type="text" placeholder="Название курса" name="review_course_name">{{#each courses}}<option>{{this.name}}</option>{{/each}}</select></div>
+                        <div class="form-group"><label for="review_description">Текст комментария</label><textarea class="form-control" id="review_description" type="text" placeholder="Текст комментария" name="review_description" rows="3"></textarea></div>
+                        <div class="form-group"><label for="review_rating">Рейтинг</label><select class="form-control" id="review_rating" type="number" placeholder="Рейтинг" name="review_rating">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option></select></div>
+                        <div class="form-group"><label for="review_date">Дата комментария</label><input class="form-control" id="review_date" type="date" placeholder="Дата" name="review_date" value=""></div><button class="btn btn-primary btn-block btn-round" type="submit">Оставить отзыв</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<br>
+<footer class="container">
+    <div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+        <ul class="nav justify-content-between">
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/">Выйти</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_courses/{{students}}">Курсы</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/all_teachers/{{students}}">Преподаватели</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/faq/{{students}}">Вопрос-ответ</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="text-black-50" href="/reviews/{{students}}">Отзывы</a></button>
+                </div>
+        </ul>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/locale/bootstrap-table-ru-RU.min.js"></script>
+</body>
+</html>

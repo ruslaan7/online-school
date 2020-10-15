@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hello dog!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+</head>
+
+<body style="font-family: 'PT Sans', sans-serif !important; background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.6) 100%), url(images/header-image.jpg) fixed">
+    <div class="container-fluid" style="background: rgba(51,51,102, 0.75)">
+        <h1 class="text-center text-white">Онлайн-школа "Hello, dog"</h1>
+        <h2 class="text-center text-white">Сдать ЕГЭ/ОГЭ просто "Hello, dog"!</h2>
+        <div class="container-fluid">
+            <ul class="list-inline d-flex justify-content-between">
+                <li class="list-inline-item"><img src="images/barash.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                <li class="list-inline-item"><img src="images/karich.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                <li class="list-inline-item"><button class="btn btn-link text-white align-self-center"><a class="text-white" href="/all_courses">Посмотреть все курсы</a></button></li>
+                <li class="list-inline-item"><img src="images/krosch.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                <li class="list-inline-item"><img src="images/sovunya.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+        <ul class="nav justify-content-between">
+            <li>
+                <div class="nav-item">
+                    <button type="button" class="btn btn-link text-black-50" data-toggle="modal" data-target="#loginModal">Личный кабинет</button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="btn-link" href="/all_courses">Курсы</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="btn-link" href="/all_teachers">Преподаватели</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="btn-link" href="/faq">Вопрос-ответ</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="btn-link" href="/reviews">Отзывы</a></button>
+                </div>
+        </ul>
+    </div>
+
+    <div class="carousel">
+        <div id="carousel_top" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel_top" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel_top" data-slide-to="1"></li>
+                <li data-target="#carousel_top" data-slide-to="2"></li>
+                <li data-target="#carousel_top" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Курс 1</h1>
+                        <h2>Все зависит от винта</h2>
+                        <h3>Комментарий к курсу</h3>
+                        <div>
+                            <img src="images/slider5.gif" alt="Хачю питсы"/>
+                            <p>ФИО</p>
+                            <p>Достижения преподавателя</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Курс 1</h1>
+                        <h2>Все зависит от винта</h2>
+                        <h3>Комментарий к курсу</h3>
+                        <div>
+                            <img src="images/slider1.gif" alt="Хачю питсы"/>
+                            <p>ФИО</p>
+                            <p>Достижения преподавателя</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Курс 1</h1>
+                        <h2>Все зависит от винта</h2>
+                        <h3>Комментарий к курсу</h3>
+                        <div>
+                            <img src="images/slider2.gif" alt="Хачю питсы"/>
+                            <p>ФИО</p>
+                            <p>Достижения преподавателя</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Курс 1</h1>
+                        <h2>Все зависит от винта</h2>
+                        <h3>Комментарий к курсу</h3>
+                        <div>
+                            <img src="images/slider3.gif" alt="Хачю питсы"/>
+                            <p>ФИО</p>
+                            <p>Достижения преподавателя</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel_top" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel_top" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Вход</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form action="/login" method="post">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="emaillog" placeholder="Ваш email" name="uname">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="passwordlog" placeholder="Ваш пароль" name="psw">
+                                <p class="font-small blue-text d-flex justify-content-end">Забыли <a href="#forgotpassModal" class="text-info ml-1" data-dismiss="modal" data-toggle="modal">
+                                    пароль?</a></p>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-block btn-round">Войти</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <div class="signup-section">Нет аккаунта? <a href="#registrationModal" class="text-info" data-dismiss="modal" data-toggle="modal"> Зарегистрируйтесь</a>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="forgotpassModal" tabindex="-1" role="dialog" aria-labelledby="forgotpassModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Забыл пароль</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form action="/password-loss" method="post">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="emailforgot" placeholder="Ваш email" name="uname">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password1" placeholder="Ваш новый пароль" name="psw">
+                            </div>
+                            <button type="submit" class="btn btn-info btn-block btn-round">Сменить пароль</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <div class="signup-section">Нет аккаунта? <a href="#registrationModal" class="text-info" data-dismiss="modal" data-toggle="modal"> Зарегистрируйтесь</a>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-title text-center">
+                        <h4>Регистрация</h4>
+                    </div>
+                    <div class="d-flex flex-column text-center">
+                        <form action="/registration" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="namereg" placeholder="Ваше имя" name="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" id="telNoreg" placeholder="Ваш телефон" name="tel_number">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="emailreg"placeholder="Ваш email" name="login">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="passwordreg" placeholder="Ваш пароль" name="psw">
+                            </div>
+                            <button type="submit" class="btn btn-info btn-block btn-round">Зарегистрироваться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center">
+        <h1 class="text-center">О нашей онлайн-школе "Hello, dog"</h1>
+        <ul class="list-inline text-center d-flex justify-content-around">
+            <li class="list-inline-item">
+                <figure class="text-center">
+                    <img src="images/2.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">Количество преподавателей</figcaption>
+                </figure>
+            </li>
+            <li class="list-inline-item">
+                <figure class="text-center">
+                    <img src="images/4.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">Количество учеников,</figcaption>
+                    <figcaption class="figure-caption text-dark">проходивших курсы в нашей онлайн-школе</figcaption>
+                </figure>
+            </li>
+            <li class="list-inline-item">
+                <figure class="text-center">
+                    <img src="images/kapatich.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">Средний балл ЕГЭ</figcaption>
+                    <figcaption class="figure-caption text-dark">наших выпускников</figcaption>
+                </figure>
+            </li>
+            <li class="list-inline-item">
+                <figure class="text-center">
+                    <img src="images/pin.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">Средний балл ОГЭ</figcaption>
+                    <figcaption class="figure-caption text-dark">наших выпускников</figcaption>
+                </figure>
+            </li>
+            <li class="list-inline-item">
+                <figure class="text-center">
+                    <img src="images/ejik.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">Количество учеников,</figcaption>
+                    <figcaption class="figure-caption text-dark">которые готовятся прямо сейчас</figcaption>
+                </figure>
+            </li>
+        </ul>
+        <button class="btn-info">Посмотреть все курсы</button>
+    </div>
+
+    <div class="container-fluid text-center">
+        <h1>Этапы обучения</h1>
+        <ol type="I">
+            <li>Выбор курса</li>
+            <li>Качественная и эффективная подготовка к экзамену</li>
+            <li>Получение высокого балла на экзамене</li>
+        </ol>
+        <ul class="list-inline d-flex justify-content-center">
+            <li class="list-inline-item px-3">
+                <figure class="text-center">
+                    <img src="images/nuysha.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">I Этап</figcaption>
+                </figure>
+            </li>
+            <li class="list-inline-item px-3">
+                <figure class="text-center">
+                    <img src="images/losyach.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">II Этап</figcaption>
+                </figure>
+            </li>
+            <li class="list-inline-item px-3">
+                <figure class="text-center">
+                    <img src="images/exam.gif" alt="кол-во учителей" class="figure-img img-fluid rounded-circle"/>
+                    <figcaption class="figure-caption text-dark">III Этап</figcaption>
+                </figure>
+            </li>
+        </ul>
+    </div>
+
+    <div class="">
+        <div id="carousel_footer" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel_footer" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel_footer" data-slide-to="1"></li>
+                <li data-target="#carousel_footer" data-slide-to="2"></li>
+                <li data-target="#carousel_footer" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Учительская</h1>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/ejik.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/karich.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div><div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/kapatich.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                        </div>
+                        <div class="col-lg-4 border">
+                            <p>Комментарий</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Учительская</h1>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/4.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/exam.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div><div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/2.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                        </div>
+                        <div class="col-lg-4 border">
+                            <p>Комментарий</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Учительская</h1>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/barash.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/krosch.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div><div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/pin.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                        </div>
+                        <div class="col-lg-4 border">
+                            <p>Комментарий</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" style="fill:rgba(51,51,102,0.9)" ></rect></svg>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Учительская</h1>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/nuysha.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="images/losyach.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                            </div>
+                            <div class="col-lg-4 border">
+                                <p>Комментарий</p>
+                            </div>
+                        </div><div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sovunya.gif" alt="фото уч-лей" class="img-thumbnail rounded-circle"></li>
+                        </div>
+                        <div class="col-lg-4 border">
+                            <p>Комментарий</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carousel_footer" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel_footer" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <footer class="container">
+    <div class="container-fluid mt-n3" style="background: rgba(51,51,102, 0.5)">
+        <ul class="nav justify-content-between">
+            <li>
+                <div class="nav-item">
+                    <button type="button" class="btn btn-link text-black-50" data-toggle="modal" data-target="#loginModal">Личный кабинет</button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="btn-link" href="/all_courses">Курсы</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50"><a class="btn-link" href="/all_teachers">Преподаватели</a></button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50">Вопрос-ответ</button>
+                </div>
+            <li>
+                <div class="nav-item">
+                    <button class="btn btn-link text-black-50">Отзывы</button>
+                </div>
+        </ul>
+    </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
